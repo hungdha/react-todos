@@ -4,10 +4,6 @@ import {editTodo, updateTodo} from '../actions'
 
 class EditTodo extends React.Component {
 
-    constructor(props) {
-        super(props)
-    }
-
     onSave(e) {
         e.preventDefault()
         let {dispatch, id} = this.props
@@ -29,7 +25,9 @@ class EditTodo extends React.Component {
 
                 <div>
                     <form onSubmit={this.onSave.bind(this)}>
-                        <input ref="text" defaultValue={this.props.text}/>
+                        <textarea ref="text" defaultValue={this.props.text} style={{width:'100%'}}
+                        rows="10" cols="20"
+                        ></textarea>
                         <button type="submit">
                             Save Todo
                         </button>

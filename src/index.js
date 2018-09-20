@@ -18,7 +18,11 @@ const store = createStore(rootReducer,composeEnhancers(
     applyMiddleware(...middleware)
     )
 )
-store.dispatch(getAllTodos())
+
+store.dispatch(getAllTodos());
+store.subscribe(function(){
+    console.log('asdadasd');
+})
 render(
     <Provider store={store}>
         <App/>

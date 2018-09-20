@@ -1,20 +1,25 @@
-import React from 'react'
+import React, { Component } from 'react';
 import PropTypes from 'prop-types'
-import Todo from './Todo'
-const style = {
-  'listStyle' : 'none'
+import TodoItem from './TodoItem'
+
+class TodoList extends Component {
+  
+  
+  render() {
+    
+    return (
+      <ol >
+        {this.props.todos.map(todo =>
+          <TodoItem
+            key={todo.id}
+            {...todo}
+          >
+          </TodoItem>
+        )}
+      </ol>
+    );
+  }
 }
-const TodoList = ({ todos }) => (
-  <ul style={style}>
-    {todos.map(todo =>
-      <Todo
-        key={todo.id}
-        {...todo}
-      >
-      </Todo>
-    )}
-  </ul>
-)
 
 TodoList.propTypes = {
   todos: PropTypes.arrayOf(PropTypes.shape({

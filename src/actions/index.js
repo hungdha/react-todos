@@ -16,7 +16,10 @@ export const setVisibilityFilter = filter => ({
     type: 'SET_VISIBILITY_FILTER',
     filter
 })
-
+export const setVisibilityFilterByKeyword = keyword => ({
+    type :'SET_VISIBILITY_FILTER_BY_KEYWORD',
+    keyword
+})
 export const toggleTodo = id => ({
     type: 'TOGGLE_TODO',
     id

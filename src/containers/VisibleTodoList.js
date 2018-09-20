@@ -1,8 +1,9 @@
 import { connect } from 'react-redux'
 // import { toggleTodo} from '../actions'
 import TodoList from '../components/TodoList'
-import { VisibilityFilters } from '../actions'
-
+// import { VisibilityFilters } from '../actions'
+import {getVisibleTodosFilteredByKeyword} from '../selectors';
+/* 
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
     case VisibilityFilters.SHOW_ALL:
@@ -14,23 +15,10 @@ const getVisibleTodos = (todos, filter) => {
     default:
       throw new Error('Unknown filter: ' + filter)
   }
-
-  /*switch (action){
-      case EventActions.ACTION_COMPLETE:
-        return []
-      case EventActions.ACTION_EDIT:
-        return []
-      case EventActions.ACTION_DELETE:
-        return todos.filter( t => {
-            t.id != 1
-        })
-      default:
-          throw new Error('Unknown action: ' + action)
-  }*/
-}
+} */
 
 const mapStateToProps = state => ({
-  todos: getVisibleTodos(state.todos, state.visibilityFilter),
+  todos: getVisibleTodosFilteredByKeyword(state),
   isEditing: state.isEditing
 })
 
